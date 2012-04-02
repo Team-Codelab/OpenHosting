@@ -5,7 +5,7 @@ include("mysql.init.php");
 class user{
 	//////Admin Functions
 	function admin_login($admin_user,$admin_pass){
-		$pass_enc=sha1(mysql_real_escape_string($admin_pass)."pyros");
+		$pass_enc=sha1(mysql_real_escape_string($admin_pass."pyrosine"));
 		$query=mysql_query("select * from admins where user='".mysql_real_escape_string($admin_user)."' and password='".$pass_enc."'");
 		if(mysql_num_rows($query)==0) return false;
 		else return true;
@@ -20,7 +20,7 @@ class user{
 	
 	//////User Functions
 	function login($user,$pass){
-		$pass_enc=sha1(mysql_real_escape_string($pass)."pyros");
+		$pass_enc=sha1(mysql_real_escape_string($pass."pyrosine"));
 		$query=mysql_query("select * from users where (user='".mysql_real_escape_string($user)."' or email='".mysql_real_escape_string($user)."') and password='".$pass_enc."'");
 		if(mysql_num_rows($query)==0) return false;
 		else return true;
