@@ -1,3 +1,8 @@
+<?php function link_hover($id){
+	echo("onHover='document.getElementById(".$id.")'");
+	
+}?>
+
 <div style='width: 80%; height: 100px; margin-right: auto; margin-left: auto;'><img src='images/banner.jpg'></div>
 <div style='width: 80%; height: 50px; background-color: #67C8FF; padding: 5px; margin-right: auto; margin-left: auto;'>
 	<div style='float: left;'>
