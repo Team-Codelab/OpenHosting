@@ -1,4 +1,4 @@
-<div style='width: 100%; height: 50px; background-color: #00B2EE;'></div>
+<div style='width: 100%; height: 100px;'><img src='images/banner.jpg'></div>
 <hr>
 <div style='width: 100%; height: 50px; background-color: #67C8FF;'>
 	<div style='float: left;'>
