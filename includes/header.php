@@ -7,7 +7,7 @@ echo("<style>
 	img{border: none;}
 	
 	a#menu{font-size:30px; font-type:bold;}
-	div#menu{height: 30px; padding: 5px; border-left: solid 1px; float: left;}
+	div#menu{height: 30px; padding: 5px; border-left: solid 1px; float: left; vertical-align:middle;}
 	
 </style>");
 echo("</head><body>");
