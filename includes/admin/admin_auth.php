@@ -16,7 +16,7 @@ else{
 function print_login(){
 	$nomenu=1; include("../includes/header.php");
 	echo("<div style='width:100%;height:100%;'>
-		<div style='margin-right: auto; margin-left: auto; border: 1px dotted; width:300px; height:3000px; top: 50%;'>
+		<div style='margin-right: auto; margin-left: auto; border: 1px dotted; width:300px; height:300px; top: 50%;'>
 			<div><img src='../../images/banner.jpg' width=256 height=64></div>
 			<div style='margin-right: auto; margin-left: auto; width: 200px; height: 100px;'>
 				<h3>Admin Logon</h3><form method='post' action='scripts/login.php'>
