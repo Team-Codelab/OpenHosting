@@ -6,7 +6,7 @@ echo("<style>
 	a{text-decoration: none; color: #EC3D00;}
 	img{border: none;}
 	
-	a#menu{font-size:30px; font-type:bold;}
+	a.menu{font-size:30px; font-type:bold;}
 	div#menu{height: 30px; padding: 10px; border-left: dotted 1px; float: left; vertical-align: middle;}
 	
 </style>");
