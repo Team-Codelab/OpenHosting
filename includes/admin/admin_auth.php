@@ -9,9 +9,9 @@ $admin_auth=$_COOKIE["admin_auth"];
 
 if($admin_user==null || $admin_auth==null) print_login();
 else{
-//	include("../includes/user.class.php");
-//	$admin = new user();
-//	if($admin->admin_auth($admin_user, $admin_auth)==false) print_login();
+	include("../includes/user.class.php");
+	$admin = new user();
+	if($admin->admin_auth($admin_user, $admin_auth)==false) print_login();
 }
 function print_login(){
 	$nomenu=1; include("../includes/header.php");
