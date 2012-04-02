@@ -6,7 +6,7 @@
 <div style='width: 80%; height: 50px; background-color: #67C8FF; padding: 5px; margin-right: auto; margin-left: auto;'>
 	<div style='float: left;'>
 		<div id='menu' <?php link_hover($id); ?>>
-			<a href='index.php' class='menu' id='<?php echo($id); ?>'>Home</a>
+			<a href='index.php' class='menu' id='$id'>Home</a>
 		</div><?php $id++; ?>
 		<div id='menu'>
 			<a href='hosting.php' class='menu'>Hosting</a>
