@@ -10,6 +10,9 @@
 		<div id='menu'></div>
 	</div>
 	<div style='float: right;'>
-		<a href='manager/' id='menu'>Login</a>
+		<div id='menu'>
+			<a href='manager/' id='menu'>Login</a>
+		</div>
+		<div id='menu'></div>
 	</div>
 </div>
