@@ -11,15 +11,15 @@ class ini {
 		$new="";
 		for($z=0;$z<array_size($config);$z++){
 			$new.="[".key($config)."]\n";
-			for($x=0;$x<array_size($config[$x]);$x++){
+			for($x=0;$x<array_size($config[key($x)]);$x++){
 				$new.= key($config[key($x)])." = '".$config[key($config)][key($config[key($x)])]."'\n";
+				next($config[key($x)]);
 			}
 			next($config);
 		}
-		echo $new;
-//		$cf=fopen("cfg.ini","w");
-//		fwrite($cf,$new);
-//		fclose($cf);		
+		$cf=fopen("cfg.ini","w");
+		fwrite($cf,$new);
+		fclose($cf);		
 	}
 }
 

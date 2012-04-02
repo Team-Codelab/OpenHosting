@@ -10,13 +10,13 @@ mysql_query("drop database if exists ".$database);
 mysql_query("create database ".$database);
 mysql_select_db($database);
 
-/*include("../../includes/cfg_ini.class.php");
+include("../../includes/cfg_ini.class.php");
 $cfg = new ini();
 $cfg->add('mysql', 'server', $server);
 $cfg->add('mysql', 'user', $user);
 $cfg->add('mysql', 'pass', $pass);
 $cfg->add('mysql', 'database', $database);
-*/
+
 
 // Admins
 mysql_query("create table admins (
@@ -115,7 +115,7 @@ mysql_query("create table log_user_actions(
 )");
 
 $status=fopen("../status.php",'w');
-fwrite($status,'\<?php \$status=1 ?\>');
+fwrite($status,'<?php $status=1 ?>');
 fclose($status);
 
 header("location:../index.php");
