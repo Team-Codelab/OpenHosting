@@ -1,6 +1,5 @@
 <?php function link_hover($id){
-	echo("onHover='document.getElementById(".$id.")'");
-	
+	echo("onHover='document.getElementById(".$id.").style.color=white'");
 }?>
 
 <div style='width: 80%; height: 100px; margin-right: auto; margin-left: auto;'><img src='images/banner.jpg'></div>
