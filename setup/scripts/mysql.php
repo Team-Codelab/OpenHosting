@@ -10,6 +10,13 @@ mysql_query("drop database if exists ".$database);
 mysql_query("create database ".$database);
 mysql_select_db($database);
 
+include("../../includes/cfg_ini.class.php");
+$cfg = new ini();
+$cfg->add('mysql', 'server', $server);
+$cfg->add('mysql', 'user', $user);
+$cfg->add('mysql', 'pass', $pass);
+$cfg->add('mysql', 'database', $database);
+
 // Admins
 mysql_query("create table admins (
 	id int(11) unique auto_increment primary key not null,
@@ -106,8 +113,10 @@ mysql_query("create table log_user_actions(
 	timestamp int(32) not null
 )");
 
-$status=fopen("../status.php");
+$status=fopen("../status.php",'w');
 fwrite($status,'\<?php \$status=1 ?\>');
+fclose($status);
+
 header("location:../index.php");
 
 ?>

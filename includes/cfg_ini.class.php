@@ -10,11 +10,16 @@ class ini {
 		$config[$header][$key]==$value;
 		$new="";
 		for($z=0;$z<array_size($config);$z++){
-			$new.="[".$config[$z]."]\n";
+			$new.="[".key($config)."]\n";
 			for($x=0;$x<array_size($config[$x]);$x++){
-				$new.= $x." = '".$config[$z][$x]."'\n";
+				$new.= key($config[key($x)])." = '".$config[key($config)][key($config[key($x)])]."'\n";
 			}
-		}		
+			next($config);
+		}
+		echo $new;
+//		$cf=fopen("cfg.ini","w");
+//		fwrite($cf,$new);
+//		fclose($cf);		
 	}
 }
 
