@@ -17,10 +17,12 @@ function print_login(){
 	$nomenu=1; include("../includes/header.php");
 	echo("<div style='width:100%;height:100%;'>
 		<div style='margin-right: auto; margin-left: auto; margin-top:auto; margin-bottom:auto; border: 1px dotted; width:250px; height:250px;'>
-			<h3>Admin Logon</h3><form method='post' action='scripts/login.php'>
-			Username: <input type='text' name='admin_user'><br>
-			Password: <input type='password' name='admin_pass'><p>
-			<input type='submit' value='Log me in'>
+			<div style='margin-right: auto; margin-left: auto; width: 200px; height: 100px;'>
+				<h3>Admin Logon</h3><form method='post' action='scripts/login.php'>
+				Username: <input type='text' name='admin_user'><br>
+				Password: <input type='password' name='admin_pass'><p>
+				<input type='submit' value='Log me in'>
+			</div>
 		</form></div>
 	</div>");
 	exit();
