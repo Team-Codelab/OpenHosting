@@ -6,10 +6,10 @@
 
 $admin_user=$_COOKIE["admin_user"];
 $admin_auth=$_COOKIE["admin_auth"];
+include("../includes/user.class.php");
 
 if($admin_user==null || $admin_auth==null) print_login();
 else{
-	include("../includes/user.class.php");
 	$admin = new user();
 	if($admin->admin_auth($admin_user, $admin_auth)==false) print_login();
 }

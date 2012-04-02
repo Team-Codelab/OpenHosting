@@ -5,10 +5,10 @@
 
 $user=$_COOKIE["user"];
 $auth=$_COOKIE["auth"];
+include("../includes/user.class.php");
 
 if($user==null || $auth==null) print_login();
 else{
-	include("../includes/user.class.php");
 	$user = new user();
 	if($user->auth($user, $auth)==false) print_login();
 }
