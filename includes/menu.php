@@ -13,6 +13,9 @@
 		<div id='menu'>
 			<a href='manager/' id='menu'>Login</a>
 		</div>
+		<div id='menu'>
+			<a href='support/' id='menu'>Support</a>
+		</div>
 		<div id='menu'></div>
 	</div>
 </div>
