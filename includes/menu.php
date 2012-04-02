@@ -7,6 +7,7 @@
 		<div id='menu'>	
 			<a href='domains.php' id='menu'>Domains</a>
 		</div>
+		<div id='menu'></div>
 	</div>
 	<div style='float: right;'>
 		<a href='manager/' id='menu'>Login</a>
