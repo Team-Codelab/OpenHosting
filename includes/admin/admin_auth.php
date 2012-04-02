@@ -22,6 +22,6 @@ function print_login(){
 			<input type='submit' value='Log me in'>
 		</form></div>
 	</div>");
-	exit();
+//	exit();
 }
 ?>
