@@ -11,6 +11,8 @@ echo("<style>
 	
 </style>");
 echo("</head><body>");
-$id=0;
-include("menu.php");
+if(!$nomenu){
+	$id=0;
+	include("menu.php");
+}
 ?>
