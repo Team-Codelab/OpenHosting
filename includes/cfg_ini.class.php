@@ -11,12 +11,12 @@ class ini {
 		$pair=array($key=>$value);
 		
 		$config=parse_ini_file("$home/includes/cfg.ini",true);
-		if(in_array($header,$config)) {								//
+		if(array_key_exists($header,$config)) {								//
 			$config[$header][$key]=$value;							//
 		}															// Problem Code
 		else{														//
-			array_push($config,$header);							//
-			$config[$header][$key]=$value;							//
+			array_push($config,array($header=>$pair));							//
+//			$config[$header][$key]=$value;							//
 		}															//
 				print_r($config);
 		$new="";
