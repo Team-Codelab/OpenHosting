@@ -10,9 +10,9 @@ $cfg = new ini();
 $cfg->add('root', 'pass', $pass_enc);
 $cfg->add('root', 'email', $email);
 
-$mysql=$cfg->get("mysql");
-mysql_connect($mysql[server],$mysql[user],$mysql[pass]);
-mysql_select_db($mysql[database]);
+$mysql=parse_ini_file(home()."/includes/cfg.ini",true);
+mysql_connect($c["mysql"]["server"],$c["mysql"]["user"],$c["mysql"]["pass"]);
+mysql_select_db($c["mysql"]["database"]);
 
 mysql_query("insert into admins (user,pass,auth,email,level) values ('root','$pass_enc','$auth','$email',5)");
 include("../../includes/log.class.php");
