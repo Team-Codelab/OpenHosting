@@ -49,6 +49,7 @@ mysql_query("create table users (
 )");
 mysql_query("create table products(
 	id int(11) unique auto_increment primary key not null,
+	type varchar(32) not null,
 	title varchar(64) not null,
 	description varchar(1024) not null,
 	1m_cost int(3) not null,
