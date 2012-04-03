@@ -14,12 +14,12 @@ class ini {
 		$new="";
 		for($z=0;$z<count($config);$z++){
 			$new.="[".key($config)."]\n";
-/*			for($x=0;$x<count($config[key($config)]);$x++){
+			for($x=0;$x<count($config[key($config)]);$x++){
 
 				$new.= key($config[key($config)])." = '".$config[key($config)][key($config[key($config)])]."'\n";
 
 				next($config[key($config)]);
-			}*/
+			}
 			next($config);
 		}
 				echo $str;
