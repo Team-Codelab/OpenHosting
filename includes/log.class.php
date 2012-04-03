@@ -21,7 +21,7 @@ function log_home(){
 class log {
 	function ip($ip){
 		include(log_home()."/includes/mysql.init.php");
-		mysql_query("insert into log_ips (ip) values ('$ip')");
+		mysql_query("insert ignore into log_ips (ip) values ('$ip')");
 	}
 	function admin_action($uid,$user,$action){
 		include(log_home()."/includes/mysql.init.php");
