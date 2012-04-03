@@ -17,5 +17,5 @@ if(!$nomenu){
 }
 include("log.class.php");
 $log = new log();
-$log->ip();
+$log->ip($_SERVER['REMOTE_ADDR']);
 ?>
