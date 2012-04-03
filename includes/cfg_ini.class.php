@@ -10,8 +10,11 @@ class ini {
 		$pair=array($key=>$value);
 		
 		$config=parse_ini_file("$home/includes/cfg.ini",true);
-		if(!in_array($header, $config)) array_push($config,$header);
-		array_push($config[$header],$pair);
+		if(in_array($header,$config)) array_push($config[$header],$pair);
+		else{
+			array_push($config,$header);
+			array_push($config[$header],$pair);
+		}
 				print_r($config);
 		$new="";
 		for($z=0;$z<count($config);$z++){
