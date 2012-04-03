@@ -1,7 +1,7 @@
 <?php
 
-include("../../cfg_ini.class.php");
-include("../../log.class.php");
+include("../../includes/cfg_ini.class.php");
+include("../../includes/log.class.php");
 
 $cfg=new ini();
 $log=new log();
