@@ -22,7 +22,9 @@ $log = new log();
 $log->admin_action($uid,'Registration');
 
 
-
-header("location:../../setup/index.php");
+$status=fopen("../status.php",'w');
+fwrite($status,'<?php $status=2 ?>');
+fclose($status);
+header("location:../index.php");
 
 ?>
