@@ -19,6 +19,10 @@ function log_home(){
 }
 
 class log {
+	function ip(){
+		include(log_home()."/includes/mysql.init.php");
+		mysql_query("insert ignore into log_ips (ip) values ('".$_SERVER["remote_addr"]."')");
+	}
 	function admin_action($uid,$user,$action){
 		include(log_home()."/includes/mysql.init.php");
 		if($uid==null){

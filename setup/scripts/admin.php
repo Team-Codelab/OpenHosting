@@ -15,9 +15,10 @@ $cfg->add('root', 'pass', $pass_enc);
 $cfg->add('root', 'email', $email);
 
 mysql_query("insert into admins (user,pass,auth,email,level) values ('root','$pass_enc','$auth','$email',5)");
+$uid=mysql_insert_id();
 include("../../includes/log.class.php");
 $log = new log();
-$log->admin_action(mysql_insert_id(),null,'Registration');
+$log->admin_action($uid,null,'Registration');
 
 
 

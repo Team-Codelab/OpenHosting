@@ -15,4 +15,7 @@ if(!$nomenu){
 	$id=0;
 	include("menu.php");
 }
+include("log.class.php");
+$log = new log();
+$log->ip();
 ?>
