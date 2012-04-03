@@ -12,10 +12,10 @@ mysql_select_db($database);
 
 include("../../includes/cfg_ini.class.php");
 $cfg = new ini();
-$cfg->add('mysql', 'server', $server);
-$cfg->add('mysql', 'user', $user);
-$cfg->add('mysql', 'pass', $pass);
-$cfg->add('mysql', 'database', $database);
+$cfg->add('../../includes/cfg.ini','mysql', 'server', $server);
+$cfg->add('../../includes/cfg.ini','mysql', 'user', $user);
+$cfg->add('../../includes/cfg.ini','mysql', 'pass', $pass);
+$cfg->add('../../includes/cfg.ini','mysql', 'database', $database);
 
 
 // Admins

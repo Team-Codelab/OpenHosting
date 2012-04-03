@@ -11,8 +11,8 @@ $email=mysql_real_escape_string($_POST['email']);
 $auth=md5(time());
 
 $cfg = new ini();
-$cfg->add('root', 'pass', $pass_enc);
-$cfg->add('root', 'email', $email);
+$cfg->add('../../includes/cfg.ini', 'root', 'pass', $pass_enc);
+$cfg->add('../../includes/cfg.ini', 'root', 'email', $email);
 
 mysql_query("insert into admins (user,pass,auth,email,level) values ('root','$pass_enc','$auth','$email',5)");
 $uid=mysql_insert_id();
