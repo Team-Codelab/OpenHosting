@@ -1,18 +1,32 @@
 <?php
 
-$home='/home/site/main/~pyros/OpenHosting';
 
 class ini {
-	
-	function get($header){
-		$config=parse_ini_file("$home/includes/cfg.ini",true);
+	function home(){
+		$dir=getcwd();
+		if(strpos($dir,'/admin/scripts')!=false) $home="../../";
+		elseif(strpos($dir,'/admin')!=false) $home="../";
+		elseif(strpos($dir,'/manager/scripts')!=false) $home="../../";
+		elseif(strpos($dir,'/manager')!=false) $home="../";
+		elseif(strpos($dir,'/setup/scripts')!=false) $home="../../";
+		elseif(strpos($dir,'/setup')!=false) $home="../";
+		elseif(strpos($dir,'/support/scripts')!=false) $home="../../";
+		elseif(strpos($dir,'/support')!=false) $home="../";
+		elseif(strpos($dir,'/includes/admin')!=false) $home="../../";
+		elseif(strpos($dir,'/includes/manager')!=false) $home="../../";
+		elseif(strpos($dir,'/includes/modules')!=false) $home="../../";
+		elseif(strpos($dir,'/includes')!=false) $home="../";
+		else $home=".";
+		return $home;
+	}
+	function get($header){		
+		$config=parse_ini_file(home()."/includes/cfg.ini",true);
 		if($header!=null) return $config[$header];
 		else return $config;
 	}
 	function add($header,$key,$value){
-		$pair=array($key=>$value);
-		
-		$config=parse_ini_file("$home/includes/cfg.ini",true);
+				
+		$config=parse_ini_file(home()."/includes/cfg.ini",true);
 //		if(array_key_exists($header,$config)) {								//
 			$config[$header][$key]=$value;							//
 //		}															// Problem Code
@@ -30,7 +44,7 @@ class ini {
 			}
 			next($config);
 		}
-		$cfg=fopen("$home/includes/cfg.ini","w");
+		$cfg=fopen(home()."/includes/cfg.ini","w");
 		fwrite($cfg,$new);
 		fclose($cfg);
 	}
