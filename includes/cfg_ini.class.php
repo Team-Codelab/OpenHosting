@@ -10,6 +10,7 @@ class ini {
 		
 		$config=parse_ini_file("$home/includes/cfg.ini");
 		$config[$header][$key]==$value;
+				print_r($config);
 		$new="";
 		for($z=0;$z<count($config);$z++){
 			$new.="[".key($config)."]\n";
@@ -21,6 +22,7 @@ class ini {
 			}*/
 			next($config);
 		}
+				echo $str;
 		$cfg=fopen("$home/includes/cfg.ini","w");
 		fwrite($cfg,$new);
 		fclose($cfg);
