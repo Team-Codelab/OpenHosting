@@ -22,6 +22,10 @@ class user{
 		mysql_query("update admins set auth='$auth' where user='$user'");
 		return $auth;
 	}
+	function admin_uid($admin_user){
+		$query=mysql_query("select id from admins where user='".mysql_real_escape_string($admin_user)."'");
+		return mysql_result($query,0,id);
+	}
 
 	
 	//////User Functions
