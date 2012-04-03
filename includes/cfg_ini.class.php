@@ -15,8 +15,7 @@ class ini {
 			$config[$header][$key]=$value;							//
 		}															// Problem Code
 		else{														//
-			array_push($config,array($header));
-//			array_push($config,array($header=>$pair));							//
+//			array_push($config,array($header));
 			$config[$header][$key]=$value;							//
 		}															//
 				print_r($config);
