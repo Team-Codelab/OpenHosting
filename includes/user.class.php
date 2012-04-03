@@ -17,6 +17,11 @@ class user{
 		elseif($admin_auth!=mysql_result($query,0,auth)) return false;
 		else return true;
 	}
+	function admin_auth_gen($user){
+		$auth=md5(time());
+		mysql_query("update admins set auth='$auth' where user='$user'");
+		return $auth;
+	}
 
 	
 	//////User Functions

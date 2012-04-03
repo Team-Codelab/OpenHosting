@@ -29,7 +29,7 @@ elseif($status==1){
 elseif($status==2){
 	/// Setup some site basics
 	echo("Core setup:<hr><form method='post' action='scripts/core.php'>
-		Site name: <input type='text' name='user' value='OpenHosting'><br>
+		Site name: <input type='text' name='title' value='OpenHosting'><br>
 		<hr>
 		<input type='submit' value='Finish'>
 		</form>

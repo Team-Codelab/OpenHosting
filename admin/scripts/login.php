@@ -9,8 +9,9 @@ include("../../includes/user.class.php");
 $admin = new user();
 if($admin->admin_login($user, $pass)==false) header("location:index.php?E=1");
 else{
-	setcookie('admin_user',$user,'','/','hosting.zarkov.net');
-	setcookie('admin_user',$user,'','/','hosting.zarkov.net');
+	setcookie("admin_user",$user,1000000000,'/');
+	setcookie("admin_auth",$admin->admin_auth_gen($user),1000000000,'/');
+	
 	header($_SERVER['HTTP_REFERER']);
 }
 
