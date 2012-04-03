@@ -35,7 +35,6 @@ class ini {
 //			array_push($config,array($header));
 //			$config[$header][$key]=$value;							//
 //		}															//
-				print_r($config);
 		$new="";
 		for($z=0;$z<count($config);$z++){
 			$new.="[".key($config)."]\n";
