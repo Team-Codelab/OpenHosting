@@ -11,14 +11,13 @@ class ini {
 		$pair=array($key=>$value);
 		
 		$config=parse_ini_file("$home/includes/cfg.ini",true);
-		if(in_array($header,$config)) {
-			array_push($config[$header],array($key));
-			array_push($config[$header][$key],$value);
-		}
-		else{
-			array_push($config,$header);
-			$config[$header][$key]=$value;
-		}
+		if(in_array($header,$config)) {								//
+			$config[$header][$key]=$value;							//
+		}															// Problem Code
+		else{														//
+			array_push($config,$header);							//
+			$config[$header][$key]=$value;							//
+		}															//
 				print_r($config);
 		$new="";
 		for($z=0;$z<count($config);$z++){
