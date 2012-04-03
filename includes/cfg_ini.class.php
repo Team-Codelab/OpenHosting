@@ -1,15 +1,15 @@
 <?php
 
+$home='/home/site/main/~pyros/OpenHosting';
+
 class ini {
 	
 	function get($header){
-		$home="/home/site/main/~pyros/OpenHosting";
 		$config=parse_ini_file("$home/includes/cfg.ini",true);
 		if($header!=null) return $config[$header];
 		else return $config;
 	}
 	function add($header,$key,$value){
-		$home="/home/site/main/~pyros/OpenHosting";
 		$pair=array($key=>$value);
 		
 		$config=parse_ini_file("$home/includes/cfg.ini",true);
