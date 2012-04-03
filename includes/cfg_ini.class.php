@@ -1,24 +1,25 @@
 <?php
 
-
+function home(){
+	$dir=getcwd();
+	if(strpos($dir,'/admin/scripts')!=false) $home="../../";
+	elseif(strpos($dir,'/admin')!=false) $home="../";
+	elseif(strpos($dir,'/manager/scripts')!=false) $home="../../";
+	elseif(strpos($dir,'/manager')!=false) $home="../";
+	elseif(strpos($dir,'/setup/scripts')!=false) $home="../../";
+	elseif(strpos($dir,'/setup')!=false) $home="../";
+	elseif(strpos($dir,'/support/scripts')!=false) $home="../../";
+	elseif(strpos($dir,'/support')!=false) $home="../";
+	elseif(strpos($dir,'/includes/admin')!=false) $home="../../";
+	elseif(strpos($dir,'/includes/manager')!=false) $home="../../";
+	elseif(strpos($dir,'/includes/modules')!=false) $home="../../";
+	elseif(strpos($dir,'/includes')!=false) $home="../";
+	else $home=".";
+	return $home;
+}
+	
 class ini {
-	function home(){
-		$dir=getcwd();
-		if(strpos($dir,'/admin/scripts')!=false) $home="../../";
-		elseif(strpos($dir,'/admin')!=false) $home="../";
-		elseif(strpos($dir,'/manager/scripts')!=false) $home="../../";
-		elseif(strpos($dir,'/manager')!=false) $home="../";
-		elseif(strpos($dir,'/setup/scripts')!=false) $home="../../";
-		elseif(strpos($dir,'/setup')!=false) $home="../";
-		elseif(strpos($dir,'/support/scripts')!=false) $home="../../";
-		elseif(strpos($dir,'/support')!=false) $home="../";
-		elseif(strpos($dir,'/includes/admin')!=false) $home="../../";
-		elseif(strpos($dir,'/includes/manager')!=false) $home="../../";
-		elseif(strpos($dir,'/includes/modules')!=false) $home="../../";
-		elseif(strpos($dir,'/includes')!=false) $home="../";
-		else $home=".";
-		return $home;
-	}
+
 	function get($header){		
 		$config=parse_ini_file(home()."/includes/cfg.ini",true);
 		if($header!=null) return $config[$header];
