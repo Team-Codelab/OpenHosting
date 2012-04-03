@@ -17,8 +17,7 @@ class ini {
 		}
 		else{
 			array_push($config,$header);
-			array_push($config[$header],array($key));
-			array_push($config[$header][$key],$value);
+			$config[$header][]=array($key,$value);
 		}
 				print_r($config);
 		$new="";
