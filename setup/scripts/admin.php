@@ -1,5 +1,6 @@
 <?php
 
+include("../../includes/cfg_ini.class.php");
 $mysql=parse_ini_file(home()."/includes/cfg.ini",true);
 mysql_connect($c["mysql"]["server"],$c["mysql"]["user"],$c["mysql"]["pass"]);
 mysql_select_db($c["mysql"]["database"]);
@@ -9,7 +10,6 @@ $pass_enc=sha1(mysql_real_escape_string($pass."pyrosine"));
 $email=mysql_real_escape_string($_POST['email']);
 $auth=md5(time());
 
-include("../../includes/cfg_ini.class.php");
 $cfg = new ini();
 $cfg->add('root', 'pass', $pass_enc);
 $cfg->add('root', 'email', $email);
