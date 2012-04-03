@@ -11,6 +11,7 @@ echo("<style>
 	
 </style>");
 echo("</head><body>");
+include("error.php");
 if(!$nomenu){
 	$id=0;
 	include("menu.php");
