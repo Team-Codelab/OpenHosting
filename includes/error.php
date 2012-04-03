@@ -3,7 +3,6 @@
 if($_GET["E"]>=1) error($_GET["E"]);
 
 function error($n){
-	$errors=array();
 	$errors[1]=="Bad login";
 	$errors[2]=="";
 	
