@@ -17,9 +17,9 @@ class user{
 		elseif($admin_auth!=mysql_result($query,0,auth)) return false;
 		else return true;
 	}
-	function admin_auth_gen($user){
+	function admin_auth_gen($admin_user){
 		$auth=md5(time());
-		mysql_query("update admins set auth='$auth' where user='$user'");
+		mysql_query("update admins set auth='$auth' where user='$admin_user'");
 		return $auth;
 	}
 	function admin_uid($admin_user){
@@ -40,6 +40,15 @@ class user{
 		if(mysql_num_rows($query)==0) return false;
 		elseif($auth!=mysql_result($query,0,auth)) return false;
 		else return true;
+	}
+	function auth_gen($user){
+		$auth=md5(time());
+		mysql_query("update users set auth='$auth' where user='$user'");
+		return $auth;
+	}
+	function uid($user){
+		$query=mysql_query("select id from users where user='".mysql_real_escape_string($user)."'");
+		return mysql_result($query,0,id);
 	}
 	
 }

@@ -1,6 +1,8 @@
 <?php
 $title="Home";
 include("includes/header.php");
-echo("Testing.............");
+echo("<div id='body'>
+	Testing...........
+</div>");
 
 ?>
