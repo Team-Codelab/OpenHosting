@@ -16,7 +16,7 @@ else{
 	setcookie("admin_auth",$admin->admin_auth_gen($user),1000000000,'/');
 	$log->admin_action($admin->admin_uid($user),'Login');
 	
-	header($_SERVER['HTTP_REFERER']);
+	header("location:".$_SERVER['HTTP_REFERER']);
 }
 
 ?>
