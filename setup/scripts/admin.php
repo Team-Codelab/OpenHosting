@@ -12,7 +12,6 @@ mysql_query("insert into admins (user,pass,auth,email,level) values ('root',$pas
 include("../../includes/log.class.php");
 $log = new log();
 $log->admin_action(mysql_insert_id(),null,'Registration');
-include("../../includes/ini.class.php");
 
 
 
