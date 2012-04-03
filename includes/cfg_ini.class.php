@@ -1,6 +1,6 @@
 <?php
 
-function home(){
+function ini_home(){
 	$dir=getcwd();
 	if(strpos($dir,'/admin/scripts')!=false) $home="../../";
 	elseif(strpos($dir,'/admin')!=false) $home="../";
@@ -21,13 +21,13 @@ function home(){
 class ini {
 
 	function get($header){		
-		$config=parse_ini_file(home()."/includes/cfg.ini",true);
+		$config=parse_ini_file(ini_home()."/includes/cfg.ini",true);
 		if($header!=null) return $config[$header];
 		else return $config;
 	}
 	function add($header,$key,$value){
-				
-		$config=parse_ini_file(home()."/includes/cfg.ini",true);
+		$home=ini_home();
+		$config=parse_ini_file("$home/includes/cfg.ini",true);
 //		if(array_key_exists($header,$config)) {								//
 			$config[$header][$key]=$value;							//
 //		}															// Problem Code
@@ -44,7 +44,7 @@ class ini {
 			}
 			next($config);
 		}
-		$cfg=fopen(home()."/includes/cfg.ini","w");
+		$cfg=fopen("$home/includes/cfg.ini","w");
 		fwrite($cfg,$new);
 		fclose($cfg);
 	}
