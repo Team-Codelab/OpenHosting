@@ -3,6 +3,7 @@
 include("mysql.init.php");
 
 class user{
+
 	//////Admin Functions
 	function admin_login($admin_user,$admin_pass){
 		$pass_enc=sha1(mysql_real_escape_string($admin_pass."pyrosine"));
