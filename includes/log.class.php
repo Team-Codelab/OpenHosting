@@ -26,7 +26,7 @@ class log {
 	function admin_action($uid,$action){
 		include(log_home()."/includes/mysql.init.php");
 		$ip_query=mysql_query("select * from log_ips where ip='".$_SERVER['REMOTE_ADDR']."'");
-		mysql_query("insert into log_admin_actions (uid,iid,action) values (".mysql_real_escape_string($uid).",".mysql_result($ip_query,0,id).",'".mysql_real_escape_string($action)."')");
+		mysql_query("insert into log_admin_actions (uid,iid,action,timestamp) values (".mysql_real_escape_string($uid).",".mysql_result($ip_query,0,id).",'".mysql_real_escape_string($action)."',".time().")");
 	}
 }
 

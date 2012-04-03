@@ -21,7 +21,6 @@ include("../../includes/log.class.php");
 $log = new log();
 $log->admin_action($uid,'Registration');
 
-
 $status=fopen("../status.php",'w');
 fwrite($status,'<?php $status=2 ?>');
 fclose($status);

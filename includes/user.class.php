@@ -7,8 +7,8 @@ class user{
 	//////Admin Functions
 	function admin_login($admin_user,$admin_pass){
 		$pass_enc=sha1(mysql_real_escape_string($admin_pass."pyrosine"));
-		$query=mysql_query("select * from admins where user='".mysql_real_escape_string($admin_user)."' and password='".$pass_enc."'");
-		if(mysql_num_rows($query)==0) return false;
+		$user_query=mysql_query("select * from admins where user='".mysql_real_escape_string($admin_user)."' and password='".$pass_enc."'");
+		if(mysql_num_rows($user_query)==0) return false;
 		else return true;
 	}
 	function admin_auth($admin_user,$admin_auth){
