@@ -3,7 +3,8 @@
 class ini {
 	
 	function get(){
-		$config=parse_ini_file("cfg.ini",true);
+		$home="/home/site/main/~pyros/OpenHosting";
+		$config=parse_ini_file("$home/includes/cfg.ini",true);
 	}
 	function add($header,$key,$value){
 		$home="/home/site/main/~pyros/OpenHosting";
