@@ -12,6 +12,7 @@ if($status==0){
 		Database: <input type='text' name='database' value='openhosting'><p>
 		<hr>
 		<input type='submit' value='Next'>
+		</form>
 	");
 }
 elseif($status==1){ 
@@ -22,8 +23,19 @@ elseif($status==1){
 		Password: <input type='password' name='pass'><p>
 		<hr>
 		<input type='submit' value='Next'>
+		</form>
 	");
 }
+elseif($status==2){
+	/// Setup some site basics
+	echo("Core setup:<hr><form method='post' action='scripts/core.php'>
+		Site name: <input type='text' name='user' value='OpenHosting'><br>
+		<hr>
+		<input type='submit' value='Finish'>
+		</form>
+	");
+}
+else header("../index.php");
 
 
 
