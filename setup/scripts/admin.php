@@ -8,6 +8,7 @@ $auth=md5(time());
 include("../../includes/cfg_ini.class.php");
 $cfg = new ini();
 $cfg->add('root', 'pass', $pass_enc);
+$cfg->add('root', 'email', $email);
 
 $mysql=$cfg->get("mysql");
 mysql_connect($mysql[server],$mysql[user],$mysql[pass]);
