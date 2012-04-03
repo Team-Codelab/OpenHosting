@@ -21,6 +21,6 @@ $log->admin_action(mysql_insert_id(),null,'Registration');
 
 
 
-header("location:../../admin/scripts/finish_setup.php");
+header("location:../../setup/index.php");
 
 ?>
