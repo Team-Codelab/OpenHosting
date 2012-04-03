@@ -1,7 +1,7 @@
 <?php
 
 include("../../includes/cfg_ini.class.php");
-$mysql=parse_ini_file(home()."/includes/cfg.ini",true);
+$mysql=parse_ini_file("../../includes/cfg.ini",true);
 mysql_connect($c["mysql"]["server"],$c["mysql"]["user"],$c["mysql"]["pass"]);
 mysql_select_db($c["mysql"]["database"]);
 
