@@ -19,7 +19,7 @@ $uid=mysql_insert_id();
 
 include("../../includes/log.class.php");
 $log = new log();
-$log->admin_action($uid,null,'Registration');
+$log->admin_action($uid,'Registration');
 
 
 
