@@ -9,6 +9,7 @@ class ini {
 		$home="/home/site/main/~pyros/OpenHosting";
 		
 		$config=parse_ini_file("$home/includes/cfg.ini",true);
+		if(!in_array($header, $config)) array_push($config,$header);
 		array_push($config[$header],array($key=>$value));
 				print_r($config);
 		$new="";
