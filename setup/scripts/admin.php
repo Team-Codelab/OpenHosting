@@ -9,9 +9,9 @@ $cfg = new ini();
 $cfg->add('root', 'pass', $pass_enc);
 
 mysql_query("insert into admins (user,pass,auth,email,level) values ('root',$pass,$auth,$email,5)");
-include("../../includes/log.class.php");
-$log = new log();
-$log->admin_action(mysql_insert_id(),null,'Registration');
+//include("../../includes/log.class.php");
+//$log = new log();
+//$log->admin_action(mysql_insert_id(),null,'Registration');
 
 
 
