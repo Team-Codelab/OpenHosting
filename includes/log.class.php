@@ -19,14 +19,14 @@ function log_home(){
 }
 
 class log {
-	function ip($ip){
+	function ip(){
 		include(log_home()."/includes/mysql.init.php");
-		mysql_query("insert ignore into log_ips (ip) values ('$ip')");
+		mysql_query("insert ignore into log_ips (ip) values ('".$_SERVER['REMOTE_ADDR']."')");
 	}
 	function admin_action($uid,$action){
 		include(log_home()."/includes/mysql.init.php");
-		$query=mysql_query("select id from log_ips where ip='".$_SERVER['REMOTE_ADDR']."'");
-		mysql_query("insert into log_admin_actions (uid,iid,action) values (".mysql_real_escape_string($uid).",".mysql_result($query,0,id).",'".mysql_real_escape_string($action)."')");
+		$ip_query=mysql_query("select * from log_ips where ip='".$_SERVER['REMOTE_ADDR']."'");
+		mysql_query("insert into log_admin_actions (uid,iid,action) values (".mysql_real_escape_string($uid).",".mysql_result($ip_query,0,id).",'".mysql_real_escape_string($action)."')");
 	}
 }
 
