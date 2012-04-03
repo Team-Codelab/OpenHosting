@@ -35,7 +35,7 @@ elseif($status==2){
 		</form>
 	");
 }
-else header("../index.php");
+else header("location:../index.php");
 
 
 
